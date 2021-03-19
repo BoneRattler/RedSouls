@@ -1,2 +1,5 @@
 *.ini
 *.pyc
+*.spec
+build/
+dist/
