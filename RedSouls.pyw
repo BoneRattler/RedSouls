@@ -24,6 +24,14 @@ def takeInput():
 
 	return values[0]
 
+def succOnline():
+	sg.popup("Game Ready for Online Play")
+	return
+
+def succPrivate():
+	sg.popup("Game Ready for Friend's Only Play")
+	return
+
 def promptPlayStyle(folder):
 	layout = [[sg.Text("Choose Mode")], 
 			[sg.Button("Online")],
@@ -53,6 +61,7 @@ def promptPlayStyle(folder):
 			file = open(bootFN, 'w')
 			file.write(boot)
 			file.close()
+			succPrivate()
 			break
 		elif event == "Online":
 			try:
@@ -62,6 +71,8 @@ def promptPlayStyle(folder):
 				os.remove(bootFN)
 			except Exception as deleteError:
 				print("Error: ", deleteError)
+
+			succOnline()
 			break
 
 
